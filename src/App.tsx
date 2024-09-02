@@ -101,27 +101,81 @@ function App() {
 
   const scoreMessage = () => {
     if (correctAnswers === 10) {
-      return <div>Congratulations,<br />You guessed all the quiz, you are a genius</div>;
+      return <div>Congratulations,<br />You guessed all the quiz, you are a genius<br/>
+      <div className="progress">
+      <div className="progress-bar-good" style={{ width: '100%' }} data-progress="100%"></div>
+     </div>
+     </div>;
     } else if (correctAnswers === 9) {
-      return <div>Well done,<br />You guessed 9 out of 10</div>;
+      return <div>Well done,<br />You guessed 9 out of 10<br/>
+      <div className="progress">
+      <div className="progress-bar-good" style={{ width: '90%' }} data-progress="100%"></div>
+     </div>
+      </div>;
+
     } else if (correctAnswers === 8) {
-      return <div>Great job,<br />You guessed 8 out of 10</div>;
+      return <div>Great job,<br />You guessed 8 out of 10<br/>
+      <div className="progress">
+      <div className="progress-bar-good" style={{ width: '80%' }} data-progress="100%"></div>
+     </div>
+      </div>;
+      
     } else if (correctAnswers === 7) {
-      return <div>Good effort,<br />You guessed 7 out of 10</div>;
+      return <div>Good effort,<br />You guessed 7 out of 10<br/>
+      <div className="progress">
+      <div className="progress-bar-intermediate" style={{ width: '70%' }} data-progress="100%"></div>
+     </div>
+      </div>;
+      
     } else if (correctAnswers === 6) {
-      return <div>Nice try,<br />You guessed 6 out of 10</div>;
+      return <div>Nice try,<br />You guessed 6 out of 10
+      <div className="progress">
+      <div className="progress-bar-intermediate" style={{ width: '60%' }} data-progress="100%"></div>
+     </div>
+      </div>;
+      
     } else if (correctAnswers === 5) {
-      return <div>Not bad,<br />You guessed 5 out of 10</div>;
+      return <div>Not bad,<br />You guessed 5 out of 10
+            <div className="progress">
+      <div className="progress-bar-intermediate" style={{ width: '50%' }} data-progress="100%"></div>
+     </div>
+      </div>;
+      
     } else if (correctAnswers === 4) {
-      return <div>Almost there,<br />You guessed 4 out of 10</div>;
+      return <div>Almost there,<br />You guessed 4 out of 10<br/>
+      <div className="progress">
+      <div className="progress-bar-intermediate" style={{ width: '40%' }} data-progress="100%"></div>
+     </div>
+      </div>;
+      
     } else if (correctAnswers === 3) {
-      return <div>Room for improvement,<br />You guessed 3 out of 10</div>;
+      return <div>Room for improvement,<br />You guessed 3 out of 10<br/>
+      <div className="progress">
+      <div className="progress-bar-bad" style={{ width: '30%' }} data-progress="100%"></div>
+     </div>
+      </div>;
+      
     } else if (correctAnswers === 2) {
-      return <div>Needs work,<br />You guessed 2 out of 10</div>;
+      return <div>Needs work,<br />You guessed 2 out of 10<br/>
+      <div className="progress">
+      <div className="progress-bar-bad" style={{ width: '20%' }} data-progress="100%"></div>
+     </div>
+      </div>;
+      
     } else if (correctAnswers === 1) {
-      return <div>Better luck next time,<br />You guessed 1 out of 10</div>;
+      return <div>Better luck next time,<br />You guessed 1 out of 10<br/>
+      <div className="progress">
+      <div className="progress-bar-bad" style={{ width: '10%' }} data-progress="100%"></div>
+     </div>
+      </div>;
+      
     } else if (correctAnswers === 0) {
-      return <div>What a shame,<br />You did not guess any of the questions</div>;
+      return <div>What a shame,<br />You did not guess any of the questions<br/>
+      <div className="progress">
+      <div className="progress-bar-bad" style={{ width: '0%' }} data-progress="100%"></div>
+     </div>
+      </div>;
+      
     }
     return <h1>Error</h1>;
   };
