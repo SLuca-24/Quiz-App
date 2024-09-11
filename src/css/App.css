@@ -1,0 +1,128 @@
+
+.presentation-div{
+  text-align: center;
+  margin: 100px auto;
+  padding: 50px 100px;
+}
+
+@media (max-width: 3300px){
+  .presentation-div{
+    margin: 150px 600px;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 2300px){
+  .presentation-div{
+    margin: 150px 400px;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 1800px){
+  .presentation-div{
+    margin: 150px 400px;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 1200px){
+  .presentation-div{
+    margin: 150px 200px;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 800px){
+  .presentation-div{
+    margin: 150px 100px;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 650px){
+  .presentation-div{
+    margin: 120px 50px;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 550px){
+  .presentation-div{
+    margin: 100px 50px;
+    padding: 0px;
+  }
+}
+
+@media (max-width: 450px){
+  .presentation-div{
+    margin: 70px 25px;
+    padding: 0px;
+  }
+}
+
+.presentation-div h1{
+  font-size: 3rem;
+}
+
+.presentation-div h3 {
+  font-size: 1.6rem;
+}
+
+.presentation-div button{
+  margin-top: 50px;
+  background-color: #ff4757;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.presentation-div button:hover{
+  background-color: #e84118;
+  transform: translateY(-3px);
+}
+
+.presentation-div button:active {
+  transform: translateY(1px);
+}
+
+.progress {
+  background-color: #333;
+  border-radius: 50px;
+  overflow: hidden;
+  height: 20px;
+  margin-bottom: 60px;
+  animation: progressAnimation 2s ease-in-out forwards;
+  margin-top: 25px;
+}
+
+.progress-bar-intermediate {
+  background-color: orange;
+  height: 100%;
+  width: 0;
+  transition: width 2s ease-in-out;
+  border-radius: 100px;
+}
+
+.progress-bar-bad {
+  background-color: rgb(197, 0, 0);
+  height: 100%;
+  width: 0;
+  transition: width 2s ease-in-out;
+  border-radius: 100px;
+}
+
+.progress-bar-good {
+  background-color: rgb(0, 165, 0);
+  height: 100%;
+  width: 0;
+  transition: width 2s ease-in-out;
+  border-radius: 100px;
+}
+
