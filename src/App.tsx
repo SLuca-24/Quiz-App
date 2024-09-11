@@ -7,26 +7,23 @@ import './css/index.css';
 function App() {
   interface CheckboxState {
     id: number;
-    q1: boolean;
-    q2: boolean;
-    q3: boolean;
-    q4: boolean;
+   correctAnswer: string;
   }
 
 
 
 
   const initialCheckboxState: CheckboxState[] = [
-    { id: 1, q1: true, q2: false, q3: false, q4: false },
-    { id: 2, q1: false, q2: false, q3: false, q4: true },
-    { id: 3, q1: false, q2: false, q3: true, q4: false },
-    { id: 4, q1: false, q2: false, q3: false, q4: true },
-    { id: 5, q1: false, q2: false, q3: false, q4: true },
-    { id: 6, q1: false, q2: false, q3: true, q4: false },
-    { id: 7, q1: true, q2: false, q3: false, q4: false },
-    { id: 8, q1: false, q2: false, q3: false, q4: true },
-    { id: 9, q1: false, q2: false, q3: false, q4: true },
-    { id: 10, q1: true, q2: false, q3: false, q4: false },
+    { id: 1, correctAnswer: "q1" },
+    { id: 2, correctAnswer: "q4" },
+    { id: 3, correctAnswer: "q3" },
+    { id: 4, correctAnswer: "q4" },
+    { id: 5, correctAnswer: "q4" },
+    { id: 6, correctAnswer: "q3" },
+    { id: 7, correctAnswer: "q1" },
+    { id: 8, correctAnswer: "q4" },
+    { id: 9, correctAnswer: "q4" },
+    { id: 10, correctAnswer: "q1" },
   ];
 
 
@@ -65,23 +62,20 @@ function App() {
   
 
   const checkAnswer = () => {
-    const currentQuestion: any = initialCheckboxState.find(
+    const currentQuestion = initialCheckboxState.find(
       (item) => item.id === currentQuizIndex
     );
+  
     if (currentQuestion) {
-      const correctAnswerKey = Object.keys(currentQuestion).find(
-        (key) => currentQuestion[key] === true
-      );
-      if (correctAnswerKey === checkedItems) {
+      if (currentQuestion.correctAnswer === checkedItems) {
         setCorrectAnswers((prev) => prev + 1);
-        console.log("esatto")
+        console.log("esatto");
       } else {
         setWrongAnswers((prev) => prev + 1);
-        console.log("sbagliato")
+        console.log("sbagliato");
       }
     }
   };
-  
   
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -243,7 +237,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q1'
             checked={checkedItems === "q1"}
             onChange={handleCheckboxChange}
@@ -253,7 +247,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q2'
             checked={checkedItems === "q2"}
             onChange={handleCheckboxChange}
@@ -263,7 +257,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q3'
             checked={checkedItems === "q3"}
             onChange={handleCheckboxChange}
@@ -273,7 +267,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q4'
             checked={checkedItems === "q4"}
             onChange={handleCheckboxChange}
@@ -291,7 +285,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q1'
             checked={checkedItems === "q1"}
             onChange={handleCheckboxChange}
@@ -301,7 +295,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q2'
             checked={checkedItems === "q2"}
             onChange={handleCheckboxChange}
@@ -311,7 +305,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q3'
             checked={checkedItems === "q3"}
             onChange={handleCheckboxChange}
@@ -321,7 +315,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q4'
             checked={checkedItems === "q4"}
             onChange={handleCheckboxChange}
@@ -339,7 +333,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q1'
             checked={checkedItems === "q1"}
             onChange={handleCheckboxChange}
@@ -349,7 +343,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q2'
             checked={checkedItems === "q2"}
             onChange={handleCheckboxChange}
@@ -359,7 +353,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q3'
             checked={checkedItems === "q3"}
             onChange={handleCheckboxChange}
@@ -369,7 +363,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q4'
             checked={checkedItems === "q4"}
             onChange={handleCheckboxChange}
@@ -387,7 +381,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q1'
             checked={checkedItems === "q1"}
             onChange={handleCheckboxChange}
@@ -397,7 +391,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q2'
             checked={checkedItems === "q2"}
             onChange={handleCheckboxChange}
@@ -407,7 +401,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q3'
             checked={checkedItems === "q3"}
             onChange={handleCheckboxChange}
@@ -417,7 +411,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q4'
             checked={checkedItems === "q4"}
             onChange={handleCheckboxChange}
@@ -435,7 +429,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q1'
             checked={checkedItems === "q1"}
             onChange={handleCheckboxChange}
@@ -445,7 +439,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q2'
             checked={checkedItems === "q2"}
             onChange={handleCheckboxChange}
@@ -455,7 +449,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q3'
             checked={checkedItems === "q3"}
             onChange={handleCheckboxChange}
@@ -465,7 +459,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q4'
             checked={checkedItems === "q4"}
             onChange={handleCheckboxChange}
@@ -483,7 +477,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q1'
             checked={checkedItems === "q1"}
             onChange={handleCheckboxChange}
@@ -493,7 +487,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q2'
             checked={checkedItems === "q2"}
             onChange={handleCheckboxChange}
@@ -503,7 +497,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q3'
             checked={checkedItems === "q3"}
             onChange={handleCheckboxChange}
@@ -513,7 +507,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q4'
             checked={checkedItems === "q4"}
             onChange={handleCheckboxChange}
@@ -531,7 +525,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q1'
             checked={checkedItems === "q1"}
             onChange={handleCheckboxChange}
@@ -541,7 +535,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q2'
             checked={checkedItems === "q2"}
             onChange={handleCheckboxChange}
@@ -551,7 +545,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q3'
             checked={checkedItems === "q3"}
             onChange={handleCheckboxChange}
@@ -561,7 +555,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q4'
             checked={checkedItems === "q4"}
             onChange={handleCheckboxChange}
@@ -579,7 +573,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q1'
             checked={checkedItems === "q1"}
             onChange={handleCheckboxChange}
@@ -589,7 +583,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q2'
             checked={checkedItems === "q2"}
             onChange={handleCheckboxChange}
@@ -599,7 +593,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q3'
             checked={checkedItems === "q3"}
             onChange={handleCheckboxChange}
@@ -609,7 +603,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q4'
             checked={checkedItems === "q4"}
             onChange={handleCheckboxChange}
@@ -627,7 +621,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q1'
             checked={checkedItems === "q1"}
             onChange={handleCheckboxChange}
@@ -637,7 +631,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q2'
             checked={checkedItems === "q2"}
             onChange={handleCheckboxChange}
@@ -647,7 +641,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q3'
             checked={checkedItems === "q3"}
             onChange={handleCheckboxChange}
@@ -657,7 +651,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q4'
             checked={checkedItems === "q4"}
             onChange={handleCheckboxChange}
@@ -675,7 +669,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q1'
             checked={checkedItems === "q1"}
             onChange={handleCheckboxChange}
@@ -685,7 +679,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q2'
             checked={checkedItems === "q2"}
             onChange={handleCheckboxChange}
@@ -695,7 +689,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q3'
             checked={checkedItems === "q3"}
             onChange={handleCheckboxChange}
@@ -705,7 +699,7 @@ function App() {
 
         <div className='answer-options'>
           <input
-            type='checkbox'
+            type='radio'
             name='q4'
             checked={checkedItems === "q4"}
             onChange={handleCheckboxChange}
